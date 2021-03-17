@@ -41,7 +41,7 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     func setDateLabelText(indexPath: IndexPath) -> String? {
         guard let groupsList = self.groupsList else { return nil }
         
-        return String(groupsList[indexPath.row].date!)
+        return interactor?.convertTimestamp(serverTimestamp: Double(groupsList[indexPath.row].date!))
     }
     
     func setDescriptionLabelText(indexPath: IndexPath) -> String? {
@@ -62,5 +62,10 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
         self.groupsList = groups
         view?.hideHUD()
         view?.onFetchGroupsListSuccess()
+    }
+    
+    func fetchGroupsListFailure(errorCode: Int) {
+        view?.hideHUD()
+        view?.onFetchGoupsListFailure(popup: PopupDialogView().showResultPopup())
     }
 }

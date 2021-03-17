@@ -27,6 +27,7 @@
 		788B8F742602741B00009B3A /* GroupsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F732602741B00009B3A /* GroupsListService.swift */; };
 		788B8F7A260274E600009B3A /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F79260274E600009B3A /* GroupInfo.swift */; };
 		788B8F8026027D0700009B3A /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F7F26027D0700009B3A /* ImageExtension.swift */; };
+		788B8FC826028D7900009B3A /* PopupDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8FC726028D7900009B3A /* PopupDialogView.swift */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		788B8F732602741B00009B3A /* GroupsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListService.swift; sourceTree = "<group>"; };
 		788B8F79260274E600009B3A /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
 		788B8F7F26027D0700009B3A /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		788B8FC726028D7900009B3A /* PopupDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogView.swift; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				788B8F7F26027D0700009B3A /* ImageExtension.swift */,
+				788B8FC726028D7900009B3A /* PopupDialogView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				788B8F6026026ECA00009B3A /* APIManager.swift in Sources */,
 				788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */,
 				788B8F8026027D0700009B3A /* ImageExtension.swift in Sources */,
+				788B8FC826028D7900009B3A /* PopupDialogView.swift in Sources */,
 				788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,
 				788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */,

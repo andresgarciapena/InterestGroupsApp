@@ -7,9 +7,11 @@
 
 import UIKit
 import PKHUD
+import PopupDialog
 
 class GroupsListViewController: UIViewController {
 
+    @IBOutlet weak var noGroupsFindedLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: GroupsListPresenter?
@@ -28,22 +30,20 @@ class GroupsListViewController: UIViewController {
     
     func onFetchGroupsListSuccess() {
         
+        self.noGroupsFindedLabel.isHidden = true
+        self.tableView.isHidden = false
         self.tableView.reloadData()
     }
     
-    func urlToImage(urlString: String) -> UIImage {
-        var imageToShow = UIImage()
-        if let imageUrl = URL(string: urlString) {
-            let imageData = try! Data(contentsOf: imageUrl)
-            if let image = UIImage(data: imageData) {
-                imageToShow = image
-            }
-        }
-        return imageToShow
+    func onFetchGoupsListFailure(popup: PopupDialog) {
+        
+        self.present(popup, animated: false, completion: nil)
+        self.noGroupsFindedLabel.isHidden = false
+        self.tableView.isHidden = true
     }
     
     func showHUD() {
-        HUD.show(.labeledProgress(title: "", subtitle: "Downloading groups..."), onView: self.view)
+        HUD.show(.labeledProgress(title: "", subtitle: "Descargando grupos..."), onView: self.view)
     }
     
     func hideHUD() {
@@ -74,20 +74,22 @@ extension GroupsListViewController {
         
         overrideUserInterfaceStyle = .light
         
-        let add = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(addTapped))
-        let play = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(playTapped))
+        let favourites = UIBarButtonItem(image: UIImage(named: "more_vert"), style: .plain, target: self, action: #selector(favouritesTapped))
+        let reflesh = UIBarButtonItem(image: UIImage(named: "autorenew"), style: .plain, target: self, action: #selector(refreshTapped))
 
-        self.navigationItem.rightBarButtonItems = [add, play]
+        self.navigationItem.rightBarButtonItems = [favourites, reflesh]
         self.navigationItem.title = "Practica"
         
         self.tableView.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupTableViewCell")
+        
+        self.noGroupsFindedLabel.isHidden = true
     }
     
-    @objc func addTapped() {
+    @objc func favouritesTapped() {
         
     }
     
-    @objc func playTapped() {
+    @objc func refreshTapped() {
         
         presenter?.refreshGroups()
     }

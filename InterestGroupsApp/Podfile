@@ -10,6 +10,7 @@ target 'InterestGroupsApp' do
   pod 'AlamofireObjectMapper'
   pod 'ObjectMapper'
   pod 'PKHUD'
+  pod 'PopupDialog', '~> 1.1'
 
   target 'InterestGroupsAppTests' do
     inherit! :search_paths

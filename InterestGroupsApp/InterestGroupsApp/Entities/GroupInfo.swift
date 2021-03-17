@@ -14,7 +14,7 @@ struct GroupInfo: Mappable {
     var description: String?
     var descriptionShort: String?
     var defaultImageUrl: String?
-    var date: Int?
+    var date: Double?
     
     init?(map: Map) {}
     

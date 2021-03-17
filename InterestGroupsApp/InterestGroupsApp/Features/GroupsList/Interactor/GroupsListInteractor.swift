@@ -18,10 +18,17 @@ class GroupsListInteractor: GroupsListInteractorProtocol {
         GroupsListService.shared.getGroupsList(success: { (code, groups) in
             self.groupsList = groups
             self.presenter?.fetchGroupsListSuccess(groups: groups)
-            print(groups[0])
         }) { (code) in
-            print(code)
+            self.presenter?.fetchGroupsListFailure(errorCode: code)
         }
-        //presenter?.fetchGroupsListSuccess()
+    }
+    
+    func convertTimestamp(serverTimestamp: Double) -> String {
+        let x = serverTimestamp / 1000
+        let date = NSDate(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+
+        return formatter.string(from: date as Date)
     }
 }

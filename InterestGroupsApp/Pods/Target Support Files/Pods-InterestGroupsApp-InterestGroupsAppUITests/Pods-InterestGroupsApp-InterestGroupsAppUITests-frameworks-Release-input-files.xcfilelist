@@ -1,5 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-InterestGroupsApp-InterestGroupsAppUITests/Pods-InterestGroupsApp-InterestGroupsAppUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
+${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework
