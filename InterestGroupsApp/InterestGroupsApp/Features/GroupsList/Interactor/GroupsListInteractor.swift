@@ -11,8 +11,17 @@ class GroupsListInteractor: GroupsListInteractorProtocol {
     
     var presenter: GroupsListPresenter?
     
+    var groupsList: [GroupInfo]?
+    
     func loadGroupsList() {
         
-        presenter?.fetchGroupsListSuccess()
+        GroupsListService.shared.getGroupsList(success: { (code, groups) in
+            self.groupsList = groups
+            self.presenter?.fetchGroupsListSuccess(groups: groups)
+            print(groups[0])
+        }) { (code) in
+            print(code)
+        }
+        //presenter?.fetchGroupsListSuccess()
     }
 }

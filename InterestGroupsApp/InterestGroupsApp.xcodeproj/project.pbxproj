@@ -22,6 +22,11 @@
 		788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F4826025FB200009B3A /* GroupsListInteractor.swift */; };
 		788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F4E260267C400009B3A /* GroupTableViewCell.swift */; };
 		788B8F51260267C400009B3A /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B8F4F260267C400009B3A /* GroupTableViewCell.xib */; };
+		788B8F6026026ECA00009B3A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F5F26026ECA00009B3A /* APIManager.swift */; };
+		788B8F6526026F5100009B3A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F6426026F5100009B3A /* APIClient.swift */; };
+		788B8F742602741B00009B3A /* GroupsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F732602741B00009B3A /* GroupsListService.swift */; };
+		788B8F7A260274E600009B3A /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F79260274E600009B3A /* GroupInfo.swift */; };
+		788B8F8026027D0700009B3A /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F7F26027D0700009B3A /* ImageExtension.swift */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 		788B8F4826025FB200009B3A /* GroupsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListInteractor.swift; sourceTree = "<group>"; };
 		788B8F4E260267C400009B3A /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		788B8F4F260267C400009B3A /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
+		788B8F5F26026ECA00009B3A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		788B8F6426026F5100009B3A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		788B8F732602741B00009B3A /* GroupsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListService.swift; sourceTree = "<group>"; };
+		788B8F79260274E600009B3A /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		788B8F7F26027D0700009B3A /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +148,10 @@
 		788B8EE4260257FA00009B3A /* InterestGroupsApp */ = {
 			isa = PBXGroup;
 			children = (
+				788B8F7E26027CF400009B3A /* Common */,
+				788B8F78260274D100009B3A /* Entities */,
+				788B8F722602740800009B3A /* Services */,
+				788B8F5E26026EAB00009B3A /* Managers */,
 				788B8F1B2602585300009B3A /* Features */,
 				788B8EE5260257FA00009B3A /* AppDelegate.swift */,
 				788B8EE7260257FA00009B3A /* SceneDelegate.swift */,
@@ -235,6 +249,39 @@
 				788B8F4F260267C400009B3A /* GroupTableViewCell.xib */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		788B8F5E26026EAB00009B3A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F5F26026ECA00009B3A /* APIManager.swift */,
+				788B8F6426026F5100009B3A /* APIClient.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		788B8F722602740800009B3A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F732602741B00009B3A /* GroupsListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		788B8F78260274D100009B3A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F79260274E600009B3A /* GroupInfo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		788B8F7E26027CF400009B3A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F7F26027D0700009B3A /* ImageExtension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		A4CE47A2D07F55B913C568CE /* Pods */ = {
@@ -492,11 +539,16 @@
 				788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */,
 				788B8EE6260257FA00009B3A /* AppDelegate.swift in Sources */,
 				788B8F4426025F6800009B3A /* GroupsListRouter.swift in Sources */,
+				788B8F6526026F5100009B3A /* APIClient.swift in Sources */,
+				788B8F6026026ECA00009B3A /* APIManager.swift in Sources */,
 				788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */,
+				788B8F8026027D0700009B3A /* ImageExtension.swift in Sources */,
 				788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,
 				788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */,
 				788B8F1F2602588B00009B3A /* GroupsListViewController.swift in Sources */,
+				788B8F742602741B00009B3A /* GroupsListService.swift in Sources */,
+				788B8F7A260274E600009B3A /* GroupInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

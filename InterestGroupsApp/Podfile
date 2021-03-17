@@ -6,7 +6,9 @@ target 'InterestGroupsApp' do
   use_frameworks!
 
   # Pods for InterestGroups
-  pod 'Alamofire', '~> 5.2'
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
+  pod 'ObjectMapper'
 
   target 'InterestGroupsAppTests' do
     inherit! :search_paths

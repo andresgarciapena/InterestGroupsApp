@@ -5,7 +5,7 @@
 //  Created by Andres Garcia on 17/03/2021.
 //
 
-import Foundation
+import UIKit
 
 class GroupsListPresenter: GroupsListPresenterProtocol {
     
@@ -13,7 +13,7 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     var interactor: GroupsListInteractor?
     var router: GroupsListRouter?
     
-    var groupsList: [String]?
+    var groupsList: [GroupInfo]?
     
     func viewDidLoad() {
         
@@ -25,7 +25,34 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
         return groupsList?.count ?? 3
     }
     
-    func fetchGroupsListSuccess() {
+    func setNameLabelText(indexPath: IndexPath) -> String? {
+        guard let groupsList = self.groupsList else { return nil }
         
+        return groupsList[indexPath.row].name
+    }
+    
+    func setDateLabelText(indexPath: IndexPath) -> String? {
+        guard let groupsList = self.groupsList else { return nil }
+        
+        return String(groupsList[indexPath.row].date!)
+    }
+    
+    func setDescriptionLabelText(indexPath: IndexPath) -> String? {
+        guard let groupsList = self.groupsList else { return nil }
+        
+        return groupsList[indexPath.row].descriptionShort
+    }
+    
+    func setImageView(indexPath: IndexPath) -> UIImage? {
+        guard let groupsList = self.groupsList else { return nil }
+        
+        guard let urlImage = groupsList[indexPath.row].defaultImageUrl else { return nil }
+        
+        return UIImage().urlToImage(urlString: urlImage)
+    }
+    
+    func fetchGroupsListSuccess(groups: [GroupInfo]) {
+        self.groupsList = groups
+        view?.onFetchGroupsListSuccess()
     }
 }

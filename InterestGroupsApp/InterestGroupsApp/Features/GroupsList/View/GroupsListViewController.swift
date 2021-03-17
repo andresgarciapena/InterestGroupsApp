@@ -29,6 +29,17 @@ class GroupsListViewController: UIViewController {
         
         self.tableView.reloadData()
     }
+    
+    func urlToImage(urlString: String) -> UIImage {
+        var imageToShow = UIImage()
+        if let imageUrl = URL(string: urlString) {
+            let imageData = try! Data(contentsOf: imageUrl)
+            if let image = UIImage(data: imageData) {
+                imageToShow = image
+            }
+        }
+        return imageToShow
+    }
 }
 
 extension GroupsListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,9 +51,10 @@ extension GroupsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupTableViewCell
-        cell.groupNameLabel.text = "Musica"
-        cell.groupDateLabel.text = "10/10/2020"
-        cell.groupDescriptionLabel.text = "Grupo de musica"
+        cell.groupNameLabel.text = presenter?.setNameLabelText(indexPath: indexPath)
+        cell.groupDescriptionLabel.text = presenter?.setDescriptionLabelText(indexPath: indexPath)
+        cell.groupDateLabel.text = presenter?.setDateLabelText(indexPath: indexPath)
+        cell.groupImageView.image = presenter?.setImageView(indexPath: indexPath)
         return cell
     }
 }
