@@ -17,6 +17,13 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     
     func viewDidLoad() {
         
+        view?.showHUD()
+        interactor?.loadGroupsList()
+    }
+    
+    func refreshGroups() {
+        
+        view?.showHUD()
         interactor?.loadGroupsList()
     }
     
@@ -53,6 +60,7 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     
     func fetchGroupsListSuccess(groups: [GroupInfo]) {
         self.groupsList = groups
+        view?.hideHUD()
         view?.onFetchGroupsListSuccess()
     }
 }

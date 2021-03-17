@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class GroupsListViewController: UIViewController {
 
@@ -39,6 +40,14 @@ class GroupsListViewController: UIViewController {
             }
         }
         return imageToShow
+    }
+    
+    func showHUD() {
+        HUD.show(.labeledProgress(title: "", subtitle: "Downloading groups..."), onView: self.view)
+    }
+    
+    func hideHUD() {
+        HUD.hide()
     }
 }
 
@@ -80,5 +89,6 @@ extension GroupsListViewController {
     
     @objc func playTapped() {
         
+        presenter?.refreshGroups()
     }
 }

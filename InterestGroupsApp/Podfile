@@ -9,6 +9,7 @@ target 'InterestGroupsApp' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'ObjectMapper'
+  pod 'PKHUD'
 
   target 'InterestGroupsAppTests' do
     inherit! :search_paths
