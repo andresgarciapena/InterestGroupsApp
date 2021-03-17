@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		788B8F08260257FE00009B3A /* InterestGroupsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F07260257FE00009B3A /* InterestGroupsAppUITests.swift */; };
 		788B8F1F2602588B00009B3A /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F1D2602588B00009B3A /* GroupsListViewController.swift */; };
 		788B8F202602588B00009B3A /* GroupsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B8F1E2602588B00009B3A /* GroupsListViewController.xib */; };
+		788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F3926025D9300009B3A /* GroupsListPresenter.swift */; };
+		788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F3E26025EB000009B3A /* GroupsListProtocols.swift */; };
+		788B8F4426025F6800009B3A /* GroupsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F4326025F6800009B3A /* GroupsListRouter.swift */; };
+		788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F4826025FB200009B3A /* GroupsListInteractor.swift */; };
+		788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8F4E260267C400009B3A /* GroupTableViewCell.swift */; };
+		788B8F51260267C400009B3A /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B8F4F260267C400009B3A /* GroupTableViewCell.xib */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,12 @@
 		788B8F09260257FE00009B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		788B8F1D2602588B00009B3A /* GroupsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		788B8F1E2602588B00009B3A /* GroupsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsListViewController.xib; sourceTree = "<group>"; };
+		788B8F3926025D9300009B3A /* GroupsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListPresenter.swift; sourceTree = "<group>"; };
+		788B8F3E26025EB000009B3A /* GroupsListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListProtocols.swift; sourceTree = "<group>"; };
+		788B8F4326025F6800009B3A /* GroupsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListRouter.swift; sourceTree = "<group>"; };
+		788B8F4826025FB200009B3A /* GroupsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListInteractor.swift; sourceTree = "<group>"; };
+		788B8F4E260267C400009B3A /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		788B8F4F260267C400009B3A /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +177,10 @@
 		788B8F1C2602585C00009B3A /* GroupsList */ = {
 			isa = PBXGroup;
 			children = (
+				788B8F3826025D3400009B3A /* Protocols */,
+				788B8F3726025D2C00009B3A /* Interactor */,
+				788B8F3626025D2400009B3A /* Presenter */,
+				788B8F3526025D1B00009B3A /* Router */,
 				788B8F24260258DD00009B3A /* View */,
 			);
 			path = GroupsList;
@@ -173,10 +189,52 @@
 		788B8F24260258DD00009B3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				788B8F4D260267A100009B3A /* TableCell */,
 				788B8F1D2602588B00009B3A /* GroupsListViewController.swift */,
 				788B8F1E2602588B00009B3A /* GroupsListViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		788B8F3526025D1B00009B3A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F4326025F6800009B3A /* GroupsListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		788B8F3626025D2400009B3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F3926025D9300009B3A /* GroupsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		788B8F3726025D2C00009B3A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F4826025FB200009B3A /* GroupsListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		788B8F3826025D3400009B3A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F3E26025EB000009B3A /* GroupsListProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		788B8F4D260267A100009B3A /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				788B8F4E260267C400009B3A /* GroupTableViewCell.swift */,
+				788B8F4F260267C400009B3A /* GroupTableViewCell.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		A4CE47A2D07F55B913C568CE /* Pods */ = {
@@ -189,7 +247,6 @@
 				96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */,
 				C59E56A8F131986310E23DE4 /* Pods-InterestGroupsAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -304,6 +361,7 @@
 				788B8EF2260257FD00009B3A /* LaunchScreen.storyboard in Resources */,
 				788B8F202602588B00009B3A /* GroupsListViewController.xib in Resources */,
 				788B8EEF260257FD00009B3A /* Assets.xcassets in Resources */,
+				788B8F51260267C400009B3A /* GroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,8 +489,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */,
 				788B8EE6260257FA00009B3A /* AppDelegate.swift in Sources */,
+				788B8F4426025F6800009B3A /* GroupsListRouter.swift in Sources */,
+				788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */,
+				788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,
+				788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */,
 				788B8F1F2602588B00009B3A /* GroupsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
