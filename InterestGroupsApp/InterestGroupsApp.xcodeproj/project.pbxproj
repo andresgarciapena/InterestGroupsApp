@@ -35,6 +35,12 @@
 		788B8FFC26029A8A00009B3A /* GroupDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B8FFB26029A8A00009B3A /* GroupDetailInteractor.swift */; };
 		788B900126029A9A00009B3A /* GroupDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B900026029A9A00009B3A /* GroupDetailProtocols.swift */; };
 		788B90062602BFD700009B3A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90052602BFD700009B3A /* StringExtension.swift */; };
+		788B90242603440800009B3A /* GroupImagesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90232603440800009B3A /* GroupImagesProtocols.swift */; };
+		788B90292603441E00009B3A /* GroupImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90282603441D00009B3A /* GroupImagesInteractor.swift */; };
+		788B902E2603442F00009B3A /* GroupImagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B902D2603442F00009B3A /* GroupImagesPresenter.swift */; };
+		788B90332603444400009B3A /* GroupImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90322603444400009B3A /* GroupImagesRouter.swift */; };
+		788B90392603445900009B3A /* GroupImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90372603445900009B3A /* GroupImagesViewController.swift */; };
+		788B903A2603445900009B3A /* GroupImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B90382603445900009B3A /* GroupImagesViewController.xib */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +100,12 @@
 		788B8FFB26029A8A00009B3A /* GroupDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailInteractor.swift; sourceTree = "<group>"; };
 		788B900026029A9A00009B3A /* GroupDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailProtocols.swift; sourceTree = "<group>"; };
 		788B90052602BFD700009B3A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		788B90232603440800009B3A /* GroupImagesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesProtocols.swift; sourceTree = "<group>"; };
+		788B90282603441D00009B3A /* GroupImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesInteractor.swift; sourceTree = "<group>"; };
+		788B902D2603442F00009B3A /* GroupImagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesPresenter.swift; sourceTree = "<group>"; };
+		788B90322603444400009B3A /* GroupImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesRouter.swift; sourceTree = "<group>"; };
+		788B90372603445900009B3A /* GroupImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesViewController.swift; sourceTree = "<group>"; };
+		788B90382603445900009B3A /* GroupImagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupImagesViewController.xib; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +211,7 @@
 		788B8F1B2602585300009B3A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				788B901D260343B400009B3A /* GroupImages */,
 				788B8FE426029A0100009B3A /* GroupDetail */,
 				788B8F1C2602585C00009B3A /* GroupsList */,
 			);
@@ -356,6 +369,59 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		788B901D260343B400009B3A /* GroupImages */ = {
+			isa = PBXGroup;
+			children = (
+				788B9022260343F200009B3A /* Protocols */,
+				788B9021260343E400009B3A /* Interactor */,
+				788B9020260343D900009B3A /* Presenter */,
+				788B901F260343D300009B3A /* Router */,
+				788B901E260343CC00009B3A /* View */,
+			);
+			path = GroupImages;
+			sourceTree = "<group>";
+		};
+		788B901E260343CC00009B3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				788B90372603445900009B3A /* GroupImagesViewController.swift */,
+				788B90382603445900009B3A /* GroupImagesViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		788B901F260343D300009B3A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				788B90322603444400009B3A /* GroupImagesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		788B9020260343D900009B3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				788B902D2603442F00009B3A /* GroupImagesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		788B9021260343E400009B3A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				788B90282603441D00009B3A /* GroupImagesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		788B9022260343F200009B3A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				788B90232603440800009B3A /* GroupImagesProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A4CE47A2D07F55B913C568CE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +547,7 @@
 				788B8F202602588B00009B3A /* GroupsListViewController.xib in Resources */,
 				788B8FED26029A5800009B3A /* GroupDetailViewController.xib in Resources */,
 				788B8EEF260257FD00009B3A /* Assets.xcassets in Resources */,
+				788B903A2603445900009B3A /* GroupImagesViewController.xib in Resources */,
 				788B8F51260267C400009B3A /* GroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,8 +678,11 @@
 			files = (
 				788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */,
 				788B8EE6260257FA00009B3A /* AppDelegate.swift in Sources */,
+				788B90242603440800009B3A /* GroupImagesProtocols.swift in Sources */,
 				788B8F4426025F6800009B3A /* GroupsListRouter.swift in Sources */,
+				788B902E2603442F00009B3A /* GroupImagesPresenter.swift in Sources */,
 				788B8FF226029A6700009B3A /* GroupDetailRouter.swift in Sources */,
+				788B90332603444400009B3A /* GroupImagesRouter.swift in Sources */,
 				788B8F6526026F5100009B3A /* APIClient.swift in Sources */,
 				788B8F6026026ECA00009B3A /* APIManager.swift in Sources */,
 				788B900126029A9A00009B3A /* GroupDetailProtocols.swift in Sources */,
@@ -622,12 +692,14 @@
 				788B8FF726029A7900009B3A /* GroupDetailPresenter.swift in Sources */,
 				788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */,
 				788B90062602BFD700009B3A /* StringExtension.swift in Sources */,
+				788B90292603441E00009B3A /* GroupImagesInteractor.swift in Sources */,
 				788B8FFC26029A8A00009B3A /* GroupDetailInteractor.swift in Sources */,
 				788B8FEC26029A5800009B3A /* GroupDetailViewController.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,
 				788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */,
 				788B8F1F2602588B00009B3A /* GroupsListViewController.swift in Sources */,
 				788B8F742602741B00009B3A /* GroupsListService.swift in Sources */,
+				788B90392603445900009B3A /* GroupImagesViewController.swift in Sources */,
 				788B8F7A260274E600009B3A /* GroupInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

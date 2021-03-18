@@ -48,4 +48,9 @@ class GroupDetailPresenter: GroupDetailPresenterProtocol {
         
         view?.removeGroupFromFavList()
     }
+    
+    func goToGroupImages() {
+        guard let gImagesView = view, let id = groupDetail?.id else { return }
+        router?.pushToGroupImagesView(view: gImagesView, id: id)
+    }
 }

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol GroupDetailProtocol {
-    
-}
-
 protocol GroupDetailPresenterProtocol {
     
     var view: GroupDetailViewController? {get set}
@@ -21,6 +17,7 @@ protocol GroupDetailPresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
     func setImageAndDate()
+    func goToGroupImages()
 }
 
 protocol GroupDetailInteractorProtocol {
@@ -33,4 +30,5 @@ protocol GroupDetailInteractorProtocol {
 protocol GroupDetailRouterProtocol {
     
     static func createModule(groupDetail: GroupInfo) -> UIViewController
+    func pushToGroupImagesView(view: GroupDetailViewController, id: Int)
 }

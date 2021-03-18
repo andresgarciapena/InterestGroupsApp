@@ -25,4 +25,11 @@ class GroupDetailRouter: GroupDetailRouterProtocol {
         
         return viewController
     }
+    
+    func pushToGroupImagesView(view: GroupDetailViewController, id: Int) {
+        
+        let groupImagesViewController = GroupImagesRouter.createModule(id: id)
+        
+        view.navigationController?.pushViewController(groupImagesViewController, animated: true)
+    }
 }

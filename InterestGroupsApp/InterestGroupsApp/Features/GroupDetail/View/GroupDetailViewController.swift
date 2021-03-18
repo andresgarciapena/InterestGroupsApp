@@ -44,6 +44,8 @@ extension GroupDetailViewController {
     func setupUI() {
         
         overrideUserInterfaceStyle = .light
+        
+        groupImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToGroupImageView)))
     }
     
     func configureView() {
@@ -73,5 +75,10 @@ extension GroupDetailViewController {
         
         favButtonPressed = false
         favButton.setImage(UIImage(named: "favorite_border_black"), for: .normal)
+    }
+    
+    @objc func navigateToGroupImageView() {
+        
+        presenter?.goToGroupImages()
     }
 }
