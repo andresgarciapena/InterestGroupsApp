@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol GroupsListProtocol {
-    
-}
-
 protocol GroupsListPresenterProtocol {
     
     var view: GroupsListViewController? {get set}
@@ -18,13 +14,30 @@ protocol GroupsListPresenterProtocol {
     var router: GroupsListRouter? {get set}
     
     func viewDidLoad()
+    func refreshGroups()
+    func numberOfRowsInSection() -> Int
+    func didSelectRowAt(index: Int)
+    func setNameLabelText(indexPath: IndexPath) -> String?
+    func setDateLabelText(indexPath: IndexPath) -> String?
+    func setDescriptionLabelText(indexPath: IndexPath) -> String?
+    func setImageView(indexPath: IndexPath) -> UIImage?
+    func fetchGroupsListSuccess(groups: [GroupInfo])
+    func fetchGroupsListFailure(errorCode: Int)
+    func goToGroupDetail(groupDetail: GroupInfo)
 }
 
 protocol GroupsListInteractorProtocol {
     
     var presenter: GroupsListPresenter? {get set}
+    
+    var groupsList: [GroupInfo]? {get set}
+    
+    func loadGroupsList()
+    func recoverGroupDetailByIndex(index: Int)
 }
 
 protocol GroupsListRouterProtocol {
     
+    static func createModule() -> UINavigationController
+    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo)
 }

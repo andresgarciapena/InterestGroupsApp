@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupsListRouter: GroupsListProtocol {
+class GroupsListRouter: GroupsListRouterProtocol {
     
     static func createModule() -> UINavigationController {
         
@@ -23,5 +23,12 @@ class GroupsListRouter: GroupsListProtocol {
         viewController.presenter?.interactor?.presenter = presenter
         
         return navigationController
+    }
+    
+    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo) {
+        
+        let groupDetailViewController = GroupDetailRouter.createModule(groupDetail: groupDetail)
+        
+        view.navigationController?.pushViewController(groupDetailViewController, animated: true)
     }
 }

@@ -23,6 +23,13 @@ class GroupsListInteractor: GroupsListInteractorProtocol {
         }
     }
     
+    func recoverGroupDetailByIndex(index: Int) {
+        guard let groupDetail = self.groupsList?[index] else {
+            return
+        }
+        self.presenter?.goToGroupDetail(groupDetail: groupDetail)
+    }
+    
     func convertTimestamp(serverTimestamp: Double) -> String {
         let x = serverTimestamp / 1000
         let date = NSDate(timeIntervalSince1970: x)

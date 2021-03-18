@@ -66,6 +66,10 @@ extension GroupsListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.groupImageView.image = presenter?.setImageView(indexPath: indexPath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectRowAt(index: indexPath.row)
+    }
 }
 
 extension GroupsListViewController {

@@ -32,6 +32,10 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
         return groupsList?.count ?? 3
     }
     
+    func didSelectRowAt(index: Int) {
+        interactor?.recoverGroupDetailByIndex(index: index)
+    }
+    
     func setNameLabelText(indexPath: IndexPath) -> String? {
         guard let groupsList = self.groupsList else { return nil }
         
@@ -41,7 +45,8 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     func setDateLabelText(indexPath: IndexPath) -> String? {
         guard let groupsList = self.groupsList else { return nil }
         
-        return interactor?.convertTimestamp(serverTimestamp: Double(groupsList[indexPath.row].date!))
+        guard let timestamp = groupsList[indexPath.row].date else { return nil }
+        return String().convertTimestamp(serverTimestamp: timestamp)
     }
     
     func setDescriptionLabelText(indexPath: IndexPath) -> String? {
@@ -67,5 +72,10 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     func fetchGroupsListFailure(errorCode: Int) {
         view?.hideHUD()
         view?.onFetchGoupsListFailure(popup: PopupDialogView().showResultPopup())
+    }
+    
+    func goToGroupDetail(groupDetail: GroupInfo) {
+        guard let gListView = view else { return }
+        router?.pushToGroupDetailView(view: gListView, groupDetail: groupDetail)
     }
 }
