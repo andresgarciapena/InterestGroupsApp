@@ -13,8 +13,37 @@ class GroupImagesPresenter: GroupImagesPresenterProtocol {
     var interactor: GroupImagesInteractor?
     var router: GroupImagesRouter?
     
+    var groupImages: GroupImages?
+    var actualId: Int?
+    
     func viewDidLoad() {
         
         view?.setupUI()
+        interactor?.loadGroupImages()
+    }
+    
+    func fetchGroupImagesSuccess(images: GroupImages) {
+        self.groupImages = images
+        guard let image = images.arrayImages?[0] else { return }
+        actualId = 0
+        view?.imagesView.image = UIImage().urlToImage(urlString: image)
+    }
+    
+    func showNextImage() {
+        guard let imagesCount = groupImages?.arrayImages?.count, let id = actualId else { return }
+        if imagesCount > id + 1 {
+            self.actualId! += 1
+            guard let image = groupImages?.arrayImages?[id+1] else { return }
+            view?.imagesView.image = UIImage().urlToImage(urlString: image)
+        }
+    }
+    
+    func showPreviousImage() {
+        guard let id = actualId else { return }
+        if id - 1 >= 0 {
+            self.actualId! -= 1
+            guard let image = groupImages?.arrayImages?[id-1] else { return }
+            view?.imagesView.image = UIImage().urlToImage(urlString: image)
+        }
     }
 }

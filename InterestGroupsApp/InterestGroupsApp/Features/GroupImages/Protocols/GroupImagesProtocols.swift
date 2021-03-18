@@ -14,12 +14,18 @@ protocol GroupImagesPresenterProtocol {
     var router: GroupImagesRouter? {get set}
     
     func viewDidLoad()
+    func fetchGroupImagesSuccess(images: GroupImages)
+    func showNextImage()
+    func showPreviousImage()
 }
 
 protocol GroupImagesInteractorProtocol {
     
     var presenter: GroupImagesPresenter? {get set}
     var groupId: Int? {get set}
+    var groupImages: GroupImages? {get set}
+    
+    func loadGroupImages()
 }
 
 protocol GroupImagesRouterProtocol {

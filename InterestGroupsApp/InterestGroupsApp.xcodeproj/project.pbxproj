@@ -41,6 +41,8 @@
 		788B90332603444400009B3A /* GroupImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90322603444400009B3A /* GroupImagesRouter.swift */; };
 		788B90392603445900009B3A /* GroupImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90372603445900009B3A /* GroupImagesViewController.swift */; };
 		788B903A2603445900009B3A /* GroupImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B90382603445900009B3A /* GroupImagesViewController.xib */; };
+		788B904526034FE300009B3A /* GroupImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B904426034FE300009B3A /* GroupImagesService.swift */; };
+		788B904A2603502800009B3A /* GroupImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90492603502800009B3A /* GroupImages.swift */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,8 @@
 		788B90322603444400009B3A /* GroupImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesRouter.swift; sourceTree = "<group>"; };
 		788B90372603445900009B3A /* GroupImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesViewController.swift; sourceTree = "<group>"; };
 		788B90382603445900009B3A /* GroupImagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupImagesViewController.xib; sourceTree = "<group>"; };
+		788B904426034FE300009B3A /* GroupImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesService.swift; sourceTree = "<group>"; };
+		788B90492603502800009B3A /* GroupImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImages.swift; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				788B8F732602741B00009B3A /* GroupsListService.swift */,
+				788B904426034FE300009B3A /* GroupImagesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				788B8F79260274E600009B3A /* GroupInfo.swift */,
+				788B90492603502800009B3A /* GroupImages.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -679,11 +685,13 @@
 				788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */,
 				788B8EE6260257FA00009B3A /* AppDelegate.swift in Sources */,
 				788B90242603440800009B3A /* GroupImagesProtocols.swift in Sources */,
+				788B904526034FE300009B3A /* GroupImagesService.swift in Sources */,
 				788B8F4426025F6800009B3A /* GroupsListRouter.swift in Sources */,
 				788B902E2603442F00009B3A /* GroupImagesPresenter.swift in Sources */,
 				788B8FF226029A6700009B3A /* GroupDetailRouter.swift in Sources */,
 				788B90332603444400009B3A /* GroupImagesRouter.swift in Sources */,
 				788B8F6526026F5100009B3A /* APIClient.swift in Sources */,
+				788B904A2603502800009B3A /* GroupImages.swift in Sources */,
 				788B8F6026026ECA00009B3A /* APIManager.swift in Sources */,
 				788B900126029A9A00009B3A /* GroupDetailProtocols.swift in Sources */,
 				788B8F50260267C400009B3A /* GroupTableViewCell.swift in Sources */,

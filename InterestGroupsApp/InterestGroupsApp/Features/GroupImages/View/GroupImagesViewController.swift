@@ -28,11 +28,30 @@ extension GroupImagesViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        addViewGestures()
+    }
+    
+    func addViewGestures() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backToPreviousViewWhenTouchAnyWere)))
+        
+        let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeLeft))
+        swipeGestureRecognizerLeft.direction = .left
+        view.addGestureRecognizer(swipeGestureRecognizerLeft)
+        let swipeGestureRecognizerRight = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeRight))
+        swipeGestureRecognizerRight.direction = .right
+        view.addGestureRecognizer(swipeGestureRecognizerRight)
     }
     
     @objc func backToPreviousViewWhenTouchAnyWere() {
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func didSwipeLeft() {
+        presenter?.showNextImage()
+    }
+    
+    @objc func didSwipeRight() {
+        presenter?.showPreviousImage()
     }
 }

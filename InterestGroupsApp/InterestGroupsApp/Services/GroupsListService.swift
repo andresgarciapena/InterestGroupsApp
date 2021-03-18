@@ -13,12 +13,16 @@ class GroupsListService {
     
     func getGroupsList(success: @escaping (Int, [GroupInfo]) -> (), failure: @escaping (Int) -> ()) {
         
-        let urlString = "https://practica-slashmobility.firebaseio.com/groups.json"
+        let urlString = self.configureUrlApi(baseUrl: "https://practica-slashmobility.firebaseio.com/", value: "groups.json")
         
         APIClient.shared.getArray(urlString: urlString, success: {(code, arrayOfGroups) in
             success(code, arrayOfGroups)
         }) { (code) in
             failure(code)
         }
+    }
+    
+    func configureUrlApi(baseUrl: String, value: String) -> String {
+        return baseUrl + value
     }
 }
