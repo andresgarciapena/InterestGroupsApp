@@ -25,9 +25,9 @@ class GroupsListRouter: GroupsListRouterProtocol {
         return navigationController
     }
     
-    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo) {
+    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo, state: Bool) {
         
-        let groupDetailViewController = GroupDetailRouter.createModule(groupDetail: groupDetail)
+        let groupDetailViewController = GroupDetailRouter.createModule(groupDetail: groupDetail, state: state)
         
         view.navigationController?.pushViewController(groupDetailViewController, animated: true)
     }

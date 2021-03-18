@@ -9,13 +9,14 @@ import UIKit
 
 class GroupDetailRouter: GroupDetailRouterProtocol {
     
-    static func createModule(groupDetail: GroupInfo) -> UIViewController {
+    static func createModule(groupDetail: GroupInfo, state: Bool) -> UIViewController {
         
         let viewController = GroupDetailViewController()
         
         let presenter: GroupDetailPresenter = GroupDetailPresenter()
         
         viewController.presenter = presenter
+        viewController.favButtonPressed = state
         viewController.presenter?.router = GroupDetailRouter()
         viewController.presenter?.view = viewController
         viewController.presenter?.groupDetail = groupDetail

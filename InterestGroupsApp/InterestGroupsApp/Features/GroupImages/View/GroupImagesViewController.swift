@@ -18,6 +18,12 @@ class GroupImagesViewController: UIViewController {
 
         presenter?.viewDidLoad()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        presenter?.viewWillDisappear()
+    }
 }
 
 extension GroupImagesViewController {
@@ -29,6 +35,11 @@ extension GroupImagesViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         addViewGestures()
+    }
+    
+    func restartNavigationBar() {
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func addViewGestures() {

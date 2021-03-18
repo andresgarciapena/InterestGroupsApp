@@ -29,6 +29,6 @@ protocol GroupDetailInteractorProtocol {
 
 protocol GroupDetailRouterProtocol {
     
-    static func createModule(groupDetail: GroupInfo) -> UIViewController
+    static func createModule(groupDetail: GroupInfo, state: Bool) -> UIViewController
     func pushToGroupImagesView(view: GroupDetailViewController, id: Int)
 }

@@ -6,25 +6,32 @@
 //
 
 import ObjectMapper
+import RealmSwift
+import ObjectMapper_Realm
 
-struct GroupInfo: Mappable {
+class GroupInfo: Object, Mappable {
     
-    var id: Int?
-    var name: String?
-    var description: String?
-    var descriptionShort: String?
-    var defaultImageUrl: String?
-    var date: Double?
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String?
+    @objc dynamic var descriptionLong: String?
+    @objc dynamic var descriptionShort: String?
+    @objc dynamic var defaultImageUrl: String?
+    @objc dynamic var date: Double = 0.0
     
-    init?(map: Map) {}
+    required convenience init?(map: Map) {
+        self.init()
+    }
     
-    mutating func mapping(map: Map) {
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
+    func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
-        description <- map["description"]
+        descriptionLong <- map["description"]
         descriptionShort <- map["descriptionShort"]
         defaultImageUrl <- map["defaultImageUrl"]
         date <- map["date"]
     }
 }
-

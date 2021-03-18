@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupsListPresenter: GroupsListPresenterProtocol {
     
@@ -14,11 +15,13 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     var router: GroupsListRouter?
     
     var groupsList: [GroupInfo]?
+    var realmGroupList: [GroupInfo]?
     
     func viewDidLoad() {
         
         view?.showHUD()
         interactor?.loadGroupsList()
+        readFromRealm()
     }
     
     func refreshGroups() {
@@ -29,7 +32,7 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     
     func numberOfRowsInSection() -> Int {
         
-        return groupsList?.count ?? 3
+        return groupsList?.count ?? 0
     }
     
     func didSelectRowAt(index: Int) {
@@ -45,8 +48,7 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     func setDateLabelText(indexPath: IndexPath) -> String? {
         guard let groupsList = self.groupsList else { return nil }
         
-        guard let timestamp = groupsList[indexPath.row].date else { return nil }
-        return String().convertTimestamp(serverTimestamp: timestamp)
+        return String().convertTimestamp(serverTimestamp: groupsList[indexPath.row].date)
     }
     
     func setDescriptionLabelText(indexPath: IndexPath) -> String? {
@@ -76,11 +78,23 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
     
     func goToGroupDetail(groupDetail: GroupInfo) {
         guard let gListView = view else { return }
-        router?.pushToGroupDetailView(view: gListView, groupDetail: groupDetail)
+        guard let realmList = realmGroupList else { return }
+        let fav = realmList.contains(groupDetail)
+        router?.pushToGroupDetailView(view: gListView, groupDetail: groupDetail, state: fav)
     }
     
     func goToFavGroups() {
         guard let fGroupsView = view else { return }
         router?.pushToFavGroupsView(view: fGroupsView)
+    }
+    
+    func readFromRealm() {
+        
+        realmGroupList = []
+        let realm = try! Realm()
+        let results = realm.objects(GroupInfo.self)
+        for item in results {
+            realmGroupList?.append(item)
+        }
     }
 }

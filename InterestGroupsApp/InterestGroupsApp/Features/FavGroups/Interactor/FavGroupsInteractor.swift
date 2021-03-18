@@ -10,4 +10,9 @@ import Foundation
 class FavGroupsInteractor: FavGroupsInteractorProtocol {
     
     var presenter: FavGroupsPresenter?
+    
+    func recoverGroupDetailByIndex(group: GroupInfo) {
+        
+        self.presenter?.goToGroupDetail(groupDetail: group)
+    }
 }

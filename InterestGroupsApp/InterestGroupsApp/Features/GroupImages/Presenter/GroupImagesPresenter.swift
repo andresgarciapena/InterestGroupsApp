@@ -22,6 +22,11 @@ class GroupImagesPresenter: GroupImagesPresenterProtocol {
         interactor?.loadGroupImages()
     }
     
+    func viewWillDisappear() {
+        
+        view?.restartNavigationBar()
+    }
+    
     func fetchGroupImagesSuccess(images: GroupImages) {
         self.groupImages = images
         guard let image = images.arrayImages?[0] else { return }

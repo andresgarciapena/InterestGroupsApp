@@ -46,13 +46,16 @@ extension GroupDetailViewController {
         overrideUserInterfaceStyle = .light
         
         groupImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToGroupImageView)))
+        
+        let image = favButtonPressed ? UIImage(named: "favorite_black") : UIImage(named: "favorite_border_black")
+        favButton.setImage(image, for: .normal)
     }
     
     func configureView() {
         navigationItem.title = groupDetail?.name
         
         groupNameLabel.text = groupDetail?.name
-        groupDescriptionLabel.text = groupDetail?.description
+        groupDescriptionLabel.text = groupDetail?.descriptionLong
         groupDateLabel.text = groupDetail?.name
         groupShortDescLabel.text = groupDetail?.descriptionShort
     }
@@ -69,6 +72,7 @@ extension GroupDetailViewController {
         
         favButtonPressed = true
         favButton.setImage(UIImage(named: "favorite_black"), for: .normal)
+        presenter?.addGroupToFavList()
     }
     
     func removeGroupFromFavList() {

@@ -11,6 +11,8 @@ target 'InterestGroupsApp' do
   pod 'ObjectMapper'
   pod 'PKHUD'
   pod 'PopupDialog', '~> 1.1'
+  pod 'RealmSwift'
+  pod "ObjectMapper+Realm"
 
   target 'InterestGroupsAppTests' do
     inherit! :search_paths

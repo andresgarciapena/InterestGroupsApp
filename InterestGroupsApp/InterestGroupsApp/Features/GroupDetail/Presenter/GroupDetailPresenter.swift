@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupDetailPresenter: GroupDetailPresenterProtocol {
     
@@ -46,7 +47,30 @@ class GroupDetailPresenter: GroupDetailPresenterProtocol {
     
     func removeFromFavList() {
         
+        guard let group = groupDetail else { return }
+        
+        let realm = try! Realm()
+        let results = realm.objects(GroupInfo.self)
+        for item in results {
+            if group.isEqual(item) {
+                try! realm.write {
+                    realm.delete(item)
+                }
+            }
+        }
         view?.removeGroupFromFavList()
+    }
+    
+    func addGroupToFavList() {
+        
+        guard let group = groupDetail else { return }
+        
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.add(group, update: Realm.UpdatePolicy.modified)
+        if realm.isInWriteTransaction {
+            try! realm.commitWrite()
+        }
     }
     
     func goToGroupImages() {

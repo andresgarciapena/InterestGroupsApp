@@ -40,6 +40,6 @@ protocol GroupsListInteractorProtocol {
 protocol GroupsListRouterProtocol {
     
     static func createModule() -> UINavigationController
-    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo)
+    func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo, state: Bool)
     func pushToFavGroupsView(view: GroupsListViewController)
 }

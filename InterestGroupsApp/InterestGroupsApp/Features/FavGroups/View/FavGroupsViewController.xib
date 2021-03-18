@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavGroupsViewController" customModule="InterestGroupsApp" customModuleProvider="target">
             <connections>
                 <outlet property="noGroupsLabel" destination="U2j-55-HEg" id="mO1-Fi-LD6"/>
+                <outlet property="tableView" destination="35O-JD-5bP" id="U09-UA-jQu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,6 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="35O-JD-5bP">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FBa-e6-acb"/>
+                        <outlet property="delegate" destination="-1" id="zeN-NN-Zuh"/>
+                    </connections>
+                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay grupos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2j-55-HEg">
                     <rect key="frame" x="151.5" y="437.5" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,7 +38,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="35O-JD-5bP" secondAttribute="bottom" id="3DQ-9s-RCe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="35O-JD-5bP" secondAttribute="trailing" id="8bb-2T-s0l"/>
                 <constraint firstItem="U2j-55-HEg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BWn-UC-u7L"/>
+                <constraint firstItem="35O-JD-5bP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Dz6-yZ-VpT"/>
+                <constraint firstItem="35O-JD-5bP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MAQ-Qb-qfp"/>
                 <constraint firstItem="U2j-55-HEg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XcX-h5-nmm"/>
             </constraints>
             <point key="canvasLocation" x="104" y="93"/>
