@@ -78,4 +78,9 @@ class GroupsListPresenter: GroupsListPresenterProtocol {
         guard let gListView = view else { return }
         router?.pushToGroupDetailView(view: gListView, groupDetail: groupDetail)
     }
+    
+    func goToFavGroups() {
+        guard let fGroupsView = view else { return }
+        router?.pushToFavGroupsView(view: fGroupsView)
+    }
 }

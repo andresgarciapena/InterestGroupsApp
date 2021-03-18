@@ -43,6 +43,12 @@
 		788B903A2603445900009B3A /* GroupImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B90382603445900009B3A /* GroupImagesViewController.xib */; };
 		788B904526034FE300009B3A /* GroupImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B904426034FE300009B3A /* GroupImagesService.swift */; };
 		788B904A2603502800009B3A /* GroupImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B90492603502800009B3A /* GroupImages.swift */; };
+		788B906926036EB000009B3A /* FavGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B906726036EB000009B3A /* FavGroupsViewController.swift */; };
+		788B906A26036EB000009B3A /* FavGroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B906826036EB000009B3A /* FavGroupsViewController.xib */; };
+		788B906F26036EC800009B3A /* FavGroupsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B906E26036EC800009B3A /* FavGroupsRouter.swift */; };
+		788B907426036EDA00009B3A /* FavGroupsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907326036EDA00009B3A /* FavGroupsPresenter.swift */; };
+		788B907926036EEA00009B3A /* FavGroupsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907826036EEA00009B3A /* FavGroupsInteractor.swift */; };
+		788B907E26036EFA00009B3A /* FavGroupsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907D26036EFA00009B3A /* FavGroupsProtocols.swift */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +116,12 @@
 		788B90382603445900009B3A /* GroupImagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupImagesViewController.xib; sourceTree = "<group>"; };
 		788B904426034FE300009B3A /* GroupImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImagesService.swift; sourceTree = "<group>"; };
 		788B90492603502800009B3A /* GroupImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupImages.swift; sourceTree = "<group>"; };
+		788B906726036EB000009B3A /* FavGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsViewController.swift; sourceTree = "<group>"; };
+		788B906826036EB000009B3A /* FavGroupsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavGroupsViewController.xib; sourceTree = "<group>"; };
+		788B906E26036EC800009B3A /* FavGroupsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsRouter.swift; sourceTree = "<group>"; };
+		788B907326036EDA00009B3A /* FavGroupsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsPresenter.swift; sourceTree = "<group>"; };
+		788B907826036EEA00009B3A /* FavGroupsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsInteractor.swift; sourceTree = "<group>"; };
+		788B907D26036EFA00009B3A /* FavGroupsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsProtocols.swift; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +229,7 @@
 			children = (
 				788B901D260343B400009B3A /* GroupImages */,
 				788B8FE426029A0100009B3A /* GroupDetail */,
+				788B906126036E5300009B3A /* FavGroups */,
 				788B8F1C2602585C00009B3A /* GroupsList */,
 			);
 			path = Features;
@@ -428,6 +441,59 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		788B906126036E5300009B3A /* FavGroups */ = {
+			isa = PBXGroup;
+			children = (
+				788B906626036E8D00009B3A /* Protocols */,
+				788B906526036E8500009B3A /* Interactor */,
+				788B906426036E7C00009B3A /* Presenter */,
+				788B906326036E7200009B3A /* Router */,
+				788B906226036E6900009B3A /* View */,
+			);
+			path = FavGroups;
+			sourceTree = "<group>";
+		};
+		788B906226036E6900009B3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				788B906726036EB000009B3A /* FavGroupsViewController.swift */,
+				788B906826036EB000009B3A /* FavGroupsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		788B906326036E7200009B3A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				788B906E26036EC800009B3A /* FavGroupsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		788B906426036E7C00009B3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				788B907326036EDA00009B3A /* FavGroupsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		788B906526036E8500009B3A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				788B907826036EEA00009B3A /* FavGroupsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		788B906626036E8D00009B3A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				788B907D26036EFA00009B3A /* FavGroupsProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A4CE47A2D07F55B913C568CE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788B8EF2260257FD00009B3A /* LaunchScreen.storyboard in Resources */,
+				788B906A26036EB000009B3A /* FavGroupsViewController.xib in Resources */,
 				788B8F202602588B00009B3A /* GroupsListViewController.xib in Resources */,
 				788B8FED26029A5800009B3A /* GroupDetailViewController.xib in Resources */,
 				788B8EEF260257FD00009B3A /* Assets.xcassets in Resources */,
@@ -682,6 +749,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B906926036EB000009B3A /* FavGroupsViewController.swift in Sources */,
 				788B8F3A26025D9300009B3A /* GroupsListPresenter.swift in Sources */,
 				788B8EE6260257FA00009B3A /* AppDelegate.swift in Sources */,
 				788B90242603440800009B3A /* GroupImagesProtocols.swift in Sources */,
@@ -690,6 +758,7 @@
 				788B902E2603442F00009B3A /* GroupImagesPresenter.swift in Sources */,
 				788B8FF226029A6700009B3A /* GroupDetailRouter.swift in Sources */,
 				788B90332603444400009B3A /* GroupImagesRouter.swift in Sources */,
+				788B906F26036EC800009B3A /* FavGroupsRouter.swift in Sources */,
 				788B8F6526026F5100009B3A /* APIClient.swift in Sources */,
 				788B904A2603502800009B3A /* GroupImages.swift in Sources */,
 				788B8F6026026ECA00009B3A /* APIManager.swift in Sources */,
@@ -698,12 +767,15 @@
 				788B8F8026027D0700009B3A /* ImageExtension.swift in Sources */,
 				788B8FC826028D7900009B3A /* PopupDialogView.swift in Sources */,
 				788B8FF726029A7900009B3A /* GroupDetailPresenter.swift in Sources */,
+				788B907426036EDA00009B3A /* FavGroupsPresenter.swift in Sources */,
 				788B8F3F26025EB000009B3A /* GroupsListProtocols.swift in Sources */,
 				788B90062602BFD700009B3A /* StringExtension.swift in Sources */,
+				788B907E26036EFA00009B3A /* FavGroupsProtocols.swift in Sources */,
 				788B90292603441E00009B3A /* GroupImagesInteractor.swift in Sources */,
 				788B8FFC26029A8A00009B3A /* GroupDetailInteractor.swift in Sources */,
 				788B8FEC26029A5800009B3A /* GroupDetailViewController.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,
+				788B907926036EEA00009B3A /* FavGroupsInteractor.swift in Sources */,
 				788B8F4926025FB200009B3A /* GroupsListInteractor.swift in Sources */,
 				788B8F1F2602588B00009B3A /* GroupsListViewController.swift in Sources */,
 				788B8F742602741B00009B3A /* GroupsListService.swift in Sources */,

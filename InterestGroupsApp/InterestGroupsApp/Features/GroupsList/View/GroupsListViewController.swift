@@ -90,7 +90,7 @@ extension GroupsListViewController {
     }
     
     @objc func favouritesTapped() {
-        
+        presenter?.goToFavGroups()
     }
     
     @objc func refreshTapped() {

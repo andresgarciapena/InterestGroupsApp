@@ -31,4 +31,11 @@ class GroupsListRouter: GroupsListRouterProtocol {
         
         view.navigationController?.pushViewController(groupDetailViewController, animated: true)
     }
+    
+    func pushToFavGroupsView(view: GroupsListViewController) {
+        
+        let favGroupsViewController = FavGroupsRouter.createModule()
+        
+        view.navigationController?.pushViewController(favGroupsViewController, animated: true)
+    }
 }

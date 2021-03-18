@@ -24,6 +24,7 @@ protocol GroupsListPresenterProtocol {
     func fetchGroupsListSuccess(groups: [GroupInfo])
     func fetchGroupsListFailure(errorCode: Int)
     func goToGroupDetail(groupDetail: GroupInfo)
+    func goToFavGroups()
 }
 
 protocol GroupsListInteractorProtocol {
@@ -40,4 +41,5 @@ protocol GroupsListRouterProtocol {
     
     static func createModule() -> UINavigationController
     func pushToGroupDetailView(view: GroupsListViewController, groupDetail: GroupInfo)
+    func pushToFavGroupsView(view: GroupsListViewController)
 }
