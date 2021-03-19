@@ -49,6 +49,7 @@
 		788B907426036EDA00009B3A /* FavGroupsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907326036EDA00009B3A /* FavGroupsPresenter.swift */; };
 		788B907926036EEA00009B3A /* FavGroupsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907826036EEA00009B3A /* FavGroupsInteractor.swift */; };
 		788B907E26036EFA00009B3A /* FavGroupsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B907D26036EFA00009B3A /* FavGroupsProtocols.swift */; };
+		788B916F2604942000009B3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B916E2604942000009B3A /* Constants.swift */; };
 		F54DF3672C3F21035E72CB03 /* Pods_InterestGroupsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */; };
 		F8ADFFA1AEF3062887D3DB99 /* Pods_InterestGroupsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		788B907326036EDA00009B3A /* FavGroupsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsPresenter.swift; sourceTree = "<group>"; };
 		788B907826036EEA00009B3A /* FavGroupsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsInteractor.swift; sourceTree = "<group>"; };
 		788B907D26036EFA00009B3A /* FavGroupsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavGroupsProtocols.swift; sourceTree = "<group>"; };
+		788B916E2604942000009B3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		96DB05803AB2C1554E487831 /* Pods-InterestGroupsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterestGroupsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InterestGroupsAppTests/Pods-InterestGroupsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A084B7B0F74FD0731029FDB6 /* Pods_InterestGroupsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9EAD97BD62CD7EE7B7A7D0 /* Pods_InterestGroupsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterestGroupsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +333,7 @@
 				788B8F7F26027D0700009B3A /* ImageExtension.swift */,
 				788B8FC726028D7900009B3A /* PopupDialogView.swift */,
 				788B90052602BFD700009B3A /* StringExtension.swift */,
+				788B916E2604942000009B3A /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				788B90062602BFD700009B3A /* StringExtension.swift in Sources */,
 				788B907E26036EFA00009B3A /* FavGroupsProtocols.swift in Sources */,
 				788B90292603441E00009B3A /* GroupImagesInteractor.swift in Sources */,
+				788B916F2604942000009B3A /* Constants.swift in Sources */,
 				788B8FFC26029A8A00009B3A /* GroupDetailInteractor.swift in Sources */,
 				788B8FEC26029A5800009B3A /* GroupDetailViewController.swift in Sources */,
 				788B8EE8260257FA00009B3A /* SceneDelegate.swift in Sources */,

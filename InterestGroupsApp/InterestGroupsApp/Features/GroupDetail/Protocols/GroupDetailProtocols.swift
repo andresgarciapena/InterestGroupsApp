@@ -17,6 +17,10 @@ protocol GroupDetailPresenterProtocol {
     func viewDidLoad()
     func viewWillAppear()
     func setImageAndDate()
+    func addRemoveGroupToFavList(state: Bool)
+    func addToFavList()
+    func removeFromFavList()
+    func addGroupToFavList()
     func goToGroupImages()
 }
 

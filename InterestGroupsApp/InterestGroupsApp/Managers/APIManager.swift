@@ -12,6 +12,6 @@ class APIManager {
     static let shared = { APIManager() }()
     
     lazy var baseURL: String = {
-        return "https://practica-slashmobility.firebaseio.com/"
+        return Constants.URL.baseUrl
     }()
 }

@@ -14,6 +14,7 @@ protocol GroupImagesPresenterProtocol {
     var router: GroupImagesRouter? {get set}
     
     func viewDidLoad()
+    func viewWillDisappear()
     func fetchGroupImagesSuccess(images: GroupImages)
     func showNextImage()
     func showPreviousImage()

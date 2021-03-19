@@ -14,14 +14,26 @@ protocol FavGroupsPresenterProtocol {
     var router: FavGroupsRouter? {get set}
     
     func viewDidLoad()
+    func viewWillAppear()
+    func readFromRealm()
+    func numberOfRowsInSection() -> Int
+    func didSelectRowAt(index: Int)
+    func setNameLabelText(indexPath: IndexPath) -> String?
+    func setDateLabelText(indexPath: IndexPath) -> String?
+    func setDescriptionLabelText(indexPath: IndexPath) -> String?
+    func setImageView(indexPath: IndexPath) -> UIImage?
+    func goToGroupDetail(groupDetail: GroupInfo)
 }
 
 protocol FavGroupsInteractorProtocol {
     
     var presenter: FavGroupsPresenter? {get set}
+    
+    func recoverGroupDetailByIndex(group: GroupInfo)
 }
 
 protocol FavGroupsRouterProtocol {
     
     static func createModule() -> UIViewController
+    func pushToGroupDetailView(view: FavGroupsViewController, groupDetail: GroupInfo)
 }

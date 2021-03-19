@@ -43,7 +43,7 @@ class GroupsListViewController: UIViewController {
     }
     
     func showHUD() {
-        HUD.show(.labeledProgress(title: "", subtitle: "Descargando grupos..."), onView: self.view)
+        HUD.show(.labeledProgress(title: "", subtitle: Constants.StringText.downloadingText), onView: self.view)
     }
     
     func hideHUD() {
@@ -59,7 +59,7 @@ extension GroupsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIds.groupCellId, for: indexPath) as! GroupTableViewCell
         cell.groupNameLabel.text = presenter?.setNameLabelText(indexPath: indexPath)
         cell.groupDescriptionLabel.text = presenter?.setDescriptionLabelText(indexPath: indexPath)
         cell.groupDateLabel.text = presenter?.setDateLabelText(indexPath: indexPath)
@@ -82,9 +82,9 @@ extension GroupsListViewController {
         let reflesh = UIBarButtonItem(image: UIImage(named: "autorenew"), style: .plain, target: self, action: #selector(refreshTapped))
 
         self.navigationItem.rightBarButtonItems = [favourites, reflesh]
-        self.navigationItem.title = "Practica"
+        self.navigationItem.title = Constants.StringText.navTitle
         
-        self.tableView.register(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellIds.groupCellId, bundle: nil), forCellReuseIdentifier: Constants.CellIds.groupCellId)
         
         self.noGroupsFindedLabel.isHidden = true
     }
